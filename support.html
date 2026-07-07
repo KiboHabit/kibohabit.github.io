@@ -1,296 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kibo — Support</title>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --purple: #7c5cfc;
-      --purple-light: #f0ecff;
-      --text: #111;
-      --text2: #444;
-      --text3: #888;
-      --border: #e8e8e8;
-      --bg: #fff;
-    }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    /* ── Header ── */
-    header {
-      background: linear-gradient(135deg, #7c5cfc 0%, #4facfe 100%);
-      padding: 56px 24px 40px;
-      text-align: center;
-    }
-    header .logo { font-size: 36px; margin-bottom: 8px; }
-    header h1 {
-      font-size: 28px;
-      font-weight: 800;
-      color: #fff;
-      letter-spacing: -0.5px;
-      margin-bottom: 6px;
-    }
-    header p {
-      font-size: 15px;
-      color: rgba(255,255,255,0.8);
-    }
-
-    /* ── Content ── */
-    main {
-      max-width: 680px;
-      margin: 0 auto;
-      padding: 40px 24px 80px;
-    }
-
-    /* ── Contact card ── */
-    .contact-card {
-      background: var(--purple-light);
-      border-radius: 18px;
-      padding: 24px 24px;
-      margin-bottom: 40px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .contact-card h2 {
-      font-size: 17px;
-      font-weight: 700;
-      color: var(--text);
-      letter-spacing: -0.2px;
-    }
-    .contact-card p { font-size: 14px; color: var(--text2); }
-    .contact-card a {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--purple);
-      color: #fff;
-      text-decoration: none;
-      font-size: 15px;
-      font-weight: 600;
-      padding: 12px 20px;
-      border-radius: 12px;
-      width: fit-content;
-      margin-top: 4px;
-    }
-    .contact-card a:hover { opacity: 0.9; }
-
-    /* ── FAQ ── */
-    h2.section-title {
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      color: var(--purple);
-      margin-bottom: 16px;
-    }
-
-    .faq-item {
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      overflow: hidden;
-      margin-bottom: 10px;
-    }
-    .faq-q {
-      width: 100%;
-      background: none;
-      border: none;
-      padding: 16px 20px;
-      text-align: left;
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--text);
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-family: inherit;
-    }
-    .faq-q:hover { background: #fafafa; }
-    .faq-q .arrow {
-      font-size: 18px;
-      color: var(--text3);
-      transition: transform 0.2s;
-      flex-shrink: 0;
-    }
-    .faq-q[aria-expanded="true"] .arrow { transform: rotate(180deg); }
-
-    .faq-a {
-      display: none;
-      padding: 0 20px 16px;
-      font-size: 14px;
-      color: var(--text2);
-      line-height: 1.7;
-      border-top: 1px solid var(--border);
-      padding-top: 14px;
-    }
-    .faq-a.open { display: block; }
-
-    .divider {
-      height: 1px;
-      background: var(--border);
-      margin: 36px 0;
-    }
-
-    /* ── Quick links ── */
-    .link-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-top: 16px;
-    }
-    @media (max-width: 400px) { .link-grid { grid-template-columns: 1fr; } }
-
-    .link-card {
-      display: block;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 16px;
-      text-decoration: none;
-      transition: border-color 0.15s, box-shadow 0.15s;
-    }
-    .link-card:hover { border-color: var(--purple); box-shadow: 0 0 0 3px rgba(124,92,252,0.1); }
-    .link-card .icon { font-size: 24px; margin-bottom: 6px; }
-    .link-card .title { font-size: 14px; font-weight: 600; color: var(--text); }
-    .link-card .sub { font-size: 13px; color: var(--text3); margin-top: 2px; }
-
-    footer {
-      text-align: center;
-      padding: 32px 24px;
-      border-top: 1px solid var(--border);
-      font-size: 13px;
-      color: var(--text3);
-    }
-    footer a { color: var(--purple); text-decoration: none; }
-    footer a:hover { text-decoration: underline; }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Kibo — Support</title>
+<style>
+  :root { color-scheme: dark; }
+  body {
+    margin: 0; padding: 0;
+    background: #050508; color: #e8e8ee;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.65;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 48px 22px 80px; }
+  h1 { font-size: 30px; letter-spacing: -0.5px; margin: 0 0 6px; }
+  .sub { color: #8a8a98; font-size: 15px; margin: 0 0 8px; }
+  .contact { background: rgba(124,92,252,0.12); border: 1px solid rgba(124,92,252,0.35);
+    border-radius: 14px; padding: 16px 18px; margin: 24px 0 8px; }
+  .contact a { color: #a07aff; font-weight: 600; }
+  h2 { font-size: 17px; color: #a07aff; margin: 30px 0 6px; }
+  p, li { color: #c5c5d0; font-size: 15px; }
+  a { color: #7c5cfc; }
+  .foot { margin-top: 48px; color: #6a6a78; font-size: 13px; }
+</style>
 </head>
 <body>
-
-<header>
-  <div class="logo">✦</div>
+<div class="wrap">
   <h1>Kibo Support</h1>
-  <p>Got a question? We're here to help.</p>
-</header>
+  <p class="sub">We're here to help. Most questions are answered below.</p>
 
-<main>
-
-  <!-- Contact -->
-  <div class="contact-card">
-    <h2>Contact Us</h2>
-    <p>We respond to all messages within 24–48 hours.</p>
-    <a href="mailto:kibohabits@gmail.com">✉️ &nbsp;kibohabits@gmail.com</a>
+  <div class="contact">
+    Email us at <a href="mailto:kibohabits@gmail.com">kibohabits@gmail.com</a> — we typically reply within 24–48 hours.
   </div>
 
-  <!-- FAQ -->
-  <h2 class="section-title">Common Questions</h2>
+  <h2>Managing your subscription</h2>
+  <p>Kibo subscriptions are billed through your Apple ID. To cancel, open iOS <strong>Settings → [your name] → Subscriptions → Kibo → Cancel Subscription</strong>. You keep access until the end of your current billing period.</p>
 
-  <div class="faq-item">
-    <button class="faq-q" onclick="toggle(this)" aria-expanded="false">
-      How do I cancel my subscription?
-      <span class="arrow">⌄</span>
-    </button>
-    <div class="faq-a">
-      Open the <strong>Settings app</strong> on your iPhone → tap your <strong>Apple ID</strong> at the top → <strong>Subscriptions</strong> → tap <strong>Kibo</strong> → tap <strong>Cancel Subscription</strong>. You'll keep Pro access until the end of your billing period.
-    </div>
-  </div>
+  <h2>Restoring purchases</h2>
+  <p>New device, or reinstalled the app? Open <strong>Settings → Restore Purchases</strong> inside Kibo to re-activate your subscription on the same Apple ID.</p>
 
-  <div class="faq-item">
-    <button class="faq-q" onclick="toggle(this)" aria-expanded="false">
-      How do I restore my purchase?
-      <span class="arrow">⌄</span>
-    </button>
-    <div class="faq-a">
-      Open Kibo → go to the <strong>Settings tab</strong> → scroll down to the <strong>About</strong> section → tap <strong>Restore Purchases</strong>. Your subscription will be re-linked to your Apple ID automatically.
-    </div>
-  </div>
+  <h2>How XP works</h2>
+  <p>XP is your permanent score and never resets. You earn 50 XP per completed gym session, and 20–50 XP for preset habits (for example Running 50, Healthy Meal 30, Reading 25, Journaling 20). Custom habits you create yourself, along with hydration and sleep tracking, don't award XP.</p>
 
-  <div class="faq-item">
-    <button class="faq-q" onclick="toggle(this)" aria-expanded="false">
-      How do I earn XP?
-      <span class="arrow">⌄</span>
-    </button>
-    <div class="faq-a">
-      XP is your permanent score and never resets. Earn <strong>50 XP</strong> for every completed gym session. Preset habits award 15–50 XP depending on the habit (e.g. Running = 50 XP, Cold Shower = 40 XP, Meditation = 25 XP). Custom habits you create yourself don't award XP. Hydration and sleep are tracked for your health but don't award XP.
-    </div>
-  </div>
+  <h2>How streaks and rest days work</h2>
+  <p>Your streak goes up by 1 each time you log a completed gym session. It does <strong>not</strong> reset after a single missed day. During onboarding you choose how many rest days you get (1, 2, or 3) — this is the most days you can go between workouts before the streak breaks. For example, with 2 rest days you can skip up to two days; train again by the third day and your streak stays alive. Skip past your rest-day limit and the streak resets to 0. The check happens when you open the app on a new day. You can change your rest-day setting in <strong>Settings → Streak &amp; Schedule</strong> (limited to once every 14 days).</p>
 
-  <div class="faq-item">
-    <button class="faq-q" onclick="toggle(this)" aria-expanded="false">
-      Why did my streak reset?
-      <span class="arrow">⌄</span>
-    </button>
-    <div class="faq-a">
-      Your streak increments by 1 for each day you complete a gym session. Missing a single day resets it to 0. Streaks reset at midnight local time, so make sure you log your session before the day ends.
-    </div>
-  </div>
+  <h2>AI photo verification</h2>
+  <p>Gym sessions and photo-verified habits ask for a quick photo, which is checked by a third-party AI provider to confirm it matches the activity. Verification photos aren't stored after the check. If a photo doesn't verify, just retake it in better light or framing.</p>
 
-  <div class="faq-item">
-    <button class="faq-q" onclick="toggle(this)" aria-expanded="false">
-      How do I delete my account?
-      <span class="arrow">⌄</span>
-    </button>
-    <div class="faq-a">
-      Email <a href="mailto:kibohabits@gmail.com" style="color:var(--purple);">kibohabits@gmail.com</a> with the subject line "Delete My Account" and include the email address linked to your Kibo account. We'll permanently delete all your data within 30 days.
-    </div>
-  </div>
+  <h2>Apple Health not syncing?</h2>
+  <p>Make sure Kibo has access: open iOS <strong>Settings → Privacy &amp; Security → Health → Kibo</strong> and enable Sleep, Water, Steps, and Workouts. Then reopen Kibo. Sleep and water sync in automatically; water you log in Kibo is also written back to Apple Health.</p>
 
-  <div class="faq-item">
-    <button class="faq-q" onclick="toggle(this)" aria-expanded="false">
-      Why isn't Apple Health connecting?
-      <span class="arrow">⌄</span>
-    </button>
-    <div class="faq-a">
-      Open the <strong>Settings app</strong> → <strong>Privacy &amp; Security</strong> → <strong>Health</strong> → tap <strong>Kibo</strong> and make sure the data types you want to share are enabled. Then go to Kibo Settings → tap <strong>Connect Apple Health</strong> again.
-    </div>
-  </div>
+  <h2>Deleting your account</h2>
+  <p>You can delete your account and all data instantly from <strong>Settings → Delete Account</strong> inside the app. Alternatively, email <a href="mailto:kibohabits@gmail.com">kibohabits@gmail.com</a> with the subject "Delete My Account" and we'll handle it.</p>
 
-  <div class="divider"></div>
+  <h2>Still need help?</h2>
+  <p>Email <a href="mailto:kibohabits@gmail.com">kibohabits@gmail.com</a> and we'll get back to you. See also our <a href="privacy.html">Privacy Policy</a>.</p>
 
-  <!-- Quick links -->
-  <h2 class="section-title">More Info</h2>
-  <div class="link-grid">
-    <a class="link-card" href="privacy.html">
-      <div class="icon">🛡️</div>
-      <div class="title">Privacy Policy</div>
-      <div class="sub">How we handle your data</div>
-    </a>
-    <a class="link-card" href="mailto:kibohabits@gmail.com">
-      <div class="icon">✉️</div>
-      <div class="title">Email Support</div>
-      <div class="sub">kibohabits@gmail.com</div>
-    </a>
-  </div>
-
-</main>
-
-<footer>
-  <p>© 2026 Kibo &nbsp;·&nbsp; <a href="privacy.html">Privacy Policy</a></p>
-</footer>
-
-<script>
-  function toggle(btn) {
-    const answer = btn.nextElementSibling;
-    const isOpen = answer.classList.contains('open');
-    // Close all
-    document.querySelectorAll('.faq-a').forEach(a => a.classList.remove('open'));
-    document.querySelectorAll('.faq-q').forEach(b => b.setAttribute('aria-expanded', 'false'));
-    // Open this one if it was closed
-    if (!isOpen) {
-      answer.classList.add('open');
-      btn.setAttribute('aria-expanded', 'true');
-    }
-  }
-</script>
-
+  <p class="foot">© 2026 Kibo. All rights reserved.</p>
+</div>
 </body>
 </html>
